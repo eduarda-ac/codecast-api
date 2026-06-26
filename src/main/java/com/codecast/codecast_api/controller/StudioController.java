@@ -1,7 +1,7 @@
 package com.codecast.codecast_api.controller;
 
 import com.codecast.codecast_api.StudioRequestDTO;
-import com.codecast.codecast_api.StudioRequestDTO;
+import com.codecast.codecast_api.StudioResponseDTO;
 import com.codecast.codecast_api.StudioService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
