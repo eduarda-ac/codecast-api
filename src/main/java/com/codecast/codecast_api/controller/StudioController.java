@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/studios")
@@ -23,6 +24,10 @@ public class StudioController {
     @GetMapping("/{id}")
     public ResponseEntity<StudioResponseDTO> findById(@PathVariable Long id){
         return ResponseEntity.ok(studioService.findById(id));
+    }
+    @GetMapping
+    public ResponseEntity<List<StudioResponseDTO>> findAll() {
+        return ResponseEntity.ok(studioService.findAll());
     }
     @PutMapping("/{id}")
     public ResponseEntity<StudioResponseDTO> update(@PathVariable Long id, @Valid @RequestBody StudioRequestDTO dto){

@@ -7,9 +7,10 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/host")
+@RequestMapping("/api/hosts")
 public class HostController {
     private final com.codecast.codecast_api.service.HostService hostService;
 
@@ -32,5 +33,9 @@ public class HostController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         hostService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping
+    public ResponseEntity<List<HostResponseDTO>> findAll() {
+        return ResponseEntity.ok(hostService.findAll());
     }
 }

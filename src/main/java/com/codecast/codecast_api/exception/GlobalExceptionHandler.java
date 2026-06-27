@@ -31,4 +31,13 @@ public class GlobalExceptionHandler {
         ex.getBindingResult().getFieldErrors().forEach(fe -> errors.put(fe.getField(), fe.getDefaultMessage()));
         return ResponseEntity.badRequest().body(errors);
     }
+
+    @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiError> handleMalformedJson(
+         org.springframework.http.converter.HttpMessageNotReadableException ex,
+            HttpServletRequest request) {
+        ApiError error = new ApiError(Instant.now(), HttpStatus.BAD_REQUEST.value(),
+                "Bad Request", "JSON malformado ou tipo de dado invalido", request.getRequestURI());
+        return ResponseEntity.badRequest().body(error);
+}
 }
