@@ -18,7 +18,7 @@ public class Studio {
     private Integer maxCapacity;
 
     @ElementCollection
-    @CollectionTable(name = "studio_equipament", joinColumns = @JoinColumn(name = "studio_id"))
+    @CollectionTable(name = "studio_equipment", joinColumns = @JoinColumn(name = "studio_id"))
     @Column(name = "equipment_name")
     private List<String> equipmentList;
 
