@@ -1,17 +1,12 @@
 package com.codecast.codecast_api.controller;
 
-import com.codecast.codecast_api.HostRequestDTO;
-import com.codecast.codecast_api.HostResponseDTO;
-import com.codecast.codecast_api.HostService;
-import com.codecast.codecast_api.dto.StudioRequestDTO;
-import com.codecast.codecast_api.dto.StudioResponseDTO;
-import com.codecast.codecast_api.service.StudioService;
-
+import com.codecast.codecast_api.dto.HostRequestDTO;
+import com.codecast.codecast_api.dto.HostResponseDTO;
+import com.codecast.codecast_api.service.HostService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/host")

@@ -1,10 +1,7 @@
 package com.codecast.codecast_api.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
-import java.util.List;
-
 
 public class HostRequestDTO {
     @NotBlank(message = "O nome do locutor é obrigatório")
