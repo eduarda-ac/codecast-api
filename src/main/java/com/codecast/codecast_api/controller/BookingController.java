@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/bookings")
 public class BookingController {
     private final com.codecast.codecast_api.service.BookingService bookingService;

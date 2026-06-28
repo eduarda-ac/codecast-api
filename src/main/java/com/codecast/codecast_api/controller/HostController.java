@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/hosts")
 public class HostController {
     private final com.codecast.codecast_api.service.HostService hostService;
